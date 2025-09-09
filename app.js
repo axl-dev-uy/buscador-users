@@ -27,9 +27,9 @@ window.onclick = function (event) {
     }
 }
 
+//#TAREA 4: Mostrar Detalles Al Hacer Click
+// load user data to the modal and then show it
 function loadModal(user) {
-    let item = document.createElement('li');
-
     document.getElementById('modal-content').innerHTML = `
     <p><span class="label">👤 Name:</span> ${user.name}</p>
     <p><span class="label">📧 Email:</span> ${user.email}</p>
@@ -40,14 +40,15 @@ function loadModal(user) {
     modal.style.display = "flex";
 }
 
+// -- FIN TAREA 4 --
+
 // load data into the html
 function loadData(filter) {
     filter = filter ? filter.toLowerCase() : "";
     const container = document.getElementById('userList');
     container.innerHTML = "";
 
-    data
-        .filter(user => user.name.toLowerCase().includes(filter))
+    data.filter(user => user.name.toLowerCase().includes(filter))
         .forEach(user => {
             let item = document.createElement('li');
 
